@@ -13,13 +13,12 @@ export async function searchYoutubeVideos(query: string): Promise<YouTubeVideo[]
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash",
       // Instruct the model to use Google Search and format the output as a clean JSON string.
-      contents: `Using Google Search, find 10 music videos on YouTube for the query: "${query}". Prioritize official music videos over lyric videos or static art tracks. For each video, provide its videoId, title, and channelTitle. Your final output MUST be ONLY a single, valid, minified JSON array string. Example format: [{"videoId":"...","title":"...","channelTitle":"..."}]`,
+      contents: `Using Google Search, find up to 10 music videos on YouTube for the query: "${query}". The absolute most important requirement is that the videos MUST be embeddable on external websites. Prioritize videos from official artist channels (like VEVO channels) as they are more likely to be embeddable. Avoid "Art Tracks" or auto-generated videos which are often restricted. For each video, provide its videoId, title, and channelTitle. Your final output MUST be ONLY a single, valid, minified JSON array string. Example format: [{"videoId":"...","title":"...","channelTitle":"..."}]`,
       config: {
         // Enable the Google Search tool.
         tools: [{googleSearch: {}}],
-        // FIX: Moved systemInstruction inside the config object.
         // A clear instruction for the model's role.
-        systemInstruction: "You are an expert music search assistant. Your task is to use Google Search to find YouTube videos and return the findings as a clean, minified JSON array string, with no other text or formatting."
+        systemInstruction: "You are an expert music search assistant. Your task is to use Google Search to find YouTube videos that are explicitly embeddable and return the findings as a clean, minified JSON array string, with no other text or formatting."
       },
     });
 
