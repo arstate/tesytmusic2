@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export const SearchIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -27,4 +26,10 @@ export const GeminiLogo = (props: React.SVGProps<SVGSVGElement>) => (
     <path d="M12.1333 10.6667L9.33333 8L2 15.3333L4.8 18.1333L12.1333 10.6667Z" fill="#b3b3b3"></path>
     <path d="M8 2L15.3333 9.33333L12.5333 12.1333L5.2 4.8L8 2Z" fill="#ffffff"></path>
   </svg>
+);
+
+export const YouTubeIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" {...props}>
+        <path d="M21.58 7.19c-.23-.86-.9-1.52-1.76-1.75C18.25 5 12 5 12 5s-6.25 0-7.82.44c-.86.23-1.52.89-1.75 1.75C2 8.76 2 12 2 12s0 3.24.43 4.81c.23.86.9 1.52 1.75 1.75C5.75 19 12 19 12 19s6.25 0 7.82-.44c.86-.23 1.52-.89 1.75-1.75C22 15.24 22 12 22 12s0-3.24-.42-4.81zM9.5 15.5V8.5l6 3.5-6 3.5z" />
+    </svg>
 );
