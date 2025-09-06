@@ -1,0 +1,5 @@
+{
+  "name": "GeminiTube Music",
+  "description": "A sleek, modern music streaming web application that uses Gemini to search for music on YouTube and plays it back in a custom player. Enjoy your favorite tunes with a beautiful interface, powered by AI.",
+  "requestFramePermissions": []
+}
